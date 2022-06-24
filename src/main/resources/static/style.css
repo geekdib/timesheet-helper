@@ -150,7 +150,12 @@ div.dataTables_wrapper div.dataTables_filter label {
 
 .badge-success-alt {
   background-color: #d7f2c2;
-  color: #7bd235;
+  color: #5c9e27;
+}
+
+.badge-failure-alt {
+    background-color: rgb(255 185 202);
+    color: rgb(217 20 14);
 }
 
 .table a {

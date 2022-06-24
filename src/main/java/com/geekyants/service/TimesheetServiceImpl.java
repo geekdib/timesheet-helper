@@ -26,8 +26,16 @@ public class TimesheetServiceImpl implements TimesheetService {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 		SimpleDateFormat format2 = new SimpleDateFormat("dd/MM/yyyy");
 		commitRequest.getCommits().forEach(c -> {
-			String loghours = c.getMessage().substring(c.getMessage().indexOf(logkey) + logkey.length(),
-					c.getMessage().indexOf(logkey) + logkey.length() + 2);
+			String loghours = "";
+			if(c.getMessage().contains("Log - ")) {
+				loghours = c.getMessage().substring(c.getMessage().indexOf(logkey) + logkey.length(),
+						c.getMessage().indexOf(logkey) + logkey.length() + 2);
+				fillRequest.setStatus("Success");
+			}else {
+				fillRequest.setStatus("NA - Log Hours Missing");
+			}
+			
+			
 			String cVal = loghours.replace("]", "");
 			String tVal = cVal.trim();
 

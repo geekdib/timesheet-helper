@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="container">
+<div class="container" style="max-width: 95%!important">
   <div class="row py-5">
     <div class="col-12">
       <table id="example" class="table table-hover responsive nowrap" style="width:100%">
@@ -23,9 +23,10 @@
             <th>JIRA_TICKET_ID</th>
             <th>Date</th>
             <th>Description</th>
+            <th>Status</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="font-size: 14px;">
           <tr th:each="timesheet : ${timesheets}">
             <td>
               <a href="#">
@@ -40,6 +41,10 @@
             <td th:text="${timesheet.JIRA_TICKET_ID}"></td>
             <td th:text="${timesheet.date}"></td>
             <td th:text="${timesheet.Description}"></td>
+            <td>
+            <span th:if="${timesheet.status!=null && #strings.equalsIgnoreCase(timesheet.status, 'Success')}" class="badge badge-success badge-success-alt" th:text="${timesheet.status}"></span>
+            <span th:if="${timesheet.status!=null && #strings.equalsIgnoreCase(timesheet.status, 'NA - Log Hours Missing')}" class="badge badge-success badge-failure-alt" th:text="${timesheet.status}"></span>
+            </td>
           </tr>
         </tbody>
       </table>

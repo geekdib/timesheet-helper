@@ -18,6 +18,7 @@ public class TimesheetFillRequest {
 	private String Description;
 	private String date;
 	private String JIRA_TICKET_ID;
+	private String status;
 	
 	public int getId() {
 		return id;
@@ -55,12 +56,17 @@ public class TimesheetFillRequest {
 	public void setJIRA_TICKET_ID(String jIRA_TICKET_ID) {
 		JIRA_TICKET_ID = jIRA_TICKET_ID;
 	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	@Override
 	public String toString() {
-		return "TimesheetFillRequest [email=" + email + ", logHours=" + logHours + ", Description=" + Description
-				+ ", date=" + date + ", JIRA_TICKET_ID=" + JIRA_TICKET_ID + "]";
+		return "TimesheetFillRequest [id=" + id + ", email=" + email + ", logHours=" + logHours + ", Description="
+				+ Description + ", date=" + date + ", JIRA_TICKET_ID=" + JIRA_TICKET_ID + ", status=" + status + "]";
 	}
-	
 
 	
 	
