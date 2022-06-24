@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="no-outlines"
+	xmlns:th="http://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <title>Timesheet - Portal</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'><link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row py-5">
+    <div class="col-12">
+      <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+          <tr>
+            <th>Log Hours</th>
+            <th>Email</th>
+            <th>JIRA_TICKET_ID</th>
+            <th>Date</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="timesheet : ${timesheets}">
+            <td>
+              <a href="#">
+                <div class="d-flex align-items-center">
+                  <div class="">
+                    <p class="font-weight-bold mb-0" th:text="${timesheet.logHours}"></p>
+                  </div>
+                </div>
+              </a>
+            </td>
+            <td th:text="${timesheet.email}"></td>
+            <td th:text="${timesheet.JIRA_TICKET_ID}"></td>
+            <td th:text="${timesheet.date}"></td>
+            <td th:text="${timesheet.Description}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script><script  src="/script.js"></script>
+
+</body>
+</html>
