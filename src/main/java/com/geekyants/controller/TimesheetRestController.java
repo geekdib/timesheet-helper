@@ -3,21 +3,25 @@ package com.geekyants.controller;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.geekyants.dto.CommitRequest;
 import com.geekyants.entity.TimesheetFillRequest;
+import com.geekyants.entity.TimesheetUrl;
+import com.geekyants.repository.TimesheetUrlRepository;
 import com.geekyants.service.TimesheetService;
 
 @RestController
 public class TimesheetRestController {
 	
+	@Autowired
+	private TimesheetUrlRepository timesheetUrlRepository;
 	
 	@Autowired
 	private TimesheetService service;
@@ -38,4 +42,14 @@ public class TimesheetRestController {
 		
 	}
 	
+	@PostMapping("/updateTimesheetUrl")
+	public int updateTimesheetUrl(@RequestParam("url") String url) {
+		
+		TimesheetUrl timesheetUrl = new TimesheetUrl();
+		timesheetUrl.setUrl(url);
+		timesheetUrl.setId(1);
+		timesheetUrlRepository.save(timesheetUrl);
+		
+		return 1;
+	}
 }
