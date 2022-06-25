@@ -18,7 +18,7 @@ public class TimesheetController {
 	@Autowired
 	private TimesheetUrlRepository timesheetUrlRepository;
 	
-	@GetMapping("/getLogs")
+	@GetMapping("/logs")
 	public String getLogs(Model model) {
 		model.addAttribute("timesheets" , fillRequestRepository.findAll());
 		
@@ -28,5 +28,11 @@ public class TimesheetController {
 			model.addAttribute("timesheetUrl" , new TimesheetUrl());
 		}
 		return "home/index";
+	}
+	
+	
+	@GetMapping("/docs")
+	public String getDocs(Model model) {
+		return "docs/index";
 	}
 }

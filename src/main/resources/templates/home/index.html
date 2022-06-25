@@ -18,14 +18,30 @@
 <body>
 	<!-- partial:index.partial.html -->
 	<div class="container" style="max-width: 95% !important">
-	<div style="margin-top: 20px;">
-	<input type="text" id="timesheetEndPoint" th:field="*{timesheetUrl.url}"
-			placeholder="Enter your timesheet endpoint">
-		<button class="badge badge-success badge-success-alt" style="border: 0px;
-    font-size: 15px;background-color: #3bb8ec!important;
-    color: #ffffff!important;" type="button" id="timesheetEndPointBtn">Save</button>
-	</div>
-		
+		<div style="margin-top: 20px;">
+			<input type="text" id="timesheetEndPoint"
+				th:field="*{timesheetUrl.url}"
+				placeholder="Enter your timesheet endpoint"
+				style="min-width: 300px; font-size: 13px;">
+			<button class="badge badge-success badge-success-alt"
+				style="border: 0px; font-size: 13px; background-color: #3b89ec !important; color: #ffffff !important; font-weight: 400;"
+				type="button" id="timesheetEndPointBtn">Update Timesheet
+				Endpoint</button>
+
+
+			<input type="text"
+				style="min-width: 300px; float: right; font-size: 13px;"
+				th:value="${'http://65.1.248.194:2020/invokeFillTimesheet'}">
+
+			<button class="badge badge-success badge-success-alt"
+				style="border: 0px; float: right; font-size: 13px; background-color: #00c950; color: #fffffe; margin-right: 5px; font-weight: 400;"
+				type="button">Configure this URL in github hooks -></button>
+
+			<a class="badge badge-success badge-success-alt"
+				style="border: 0px; float: right; font-size: 13px; background-color: #757bf4; color: #ffffff; margin-right: 20px; font-weight: 400;"
+				href="/docs">Documentations</a>
+		</div>
+
 
 		<div class="row py-5">
 			<div class="col-12">
@@ -71,7 +87,8 @@
 
 	<!-- partial -->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script
 		src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
 	<script
@@ -82,7 +99,7 @@
 		src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
 	<script
 		src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script>
-			
+
 	<script src="/script.js"></script>
 
 	<script type="text/javascript">
