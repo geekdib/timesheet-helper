@@ -1,5 +1,8 @@
 package com.geekyants.entity;
-
+/**
+ * @author @dibyapp, Name : Dibyaprakash, Email : dibyaprakash@geekyants.com
+ * @Project : timesheet-helper
+ */
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

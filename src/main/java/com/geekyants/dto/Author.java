@@ -1,5 +1,8 @@
 package com.geekyants.dto;
-
+/**
+ * @author @dibyapp, Name : Dibyaprakash, Email : dibyaprakash@geekyants.com
+ * @Project : timesheet-helper
+ */
 public class Author {
 	
 	private String email;

@@ -1,5 +1,8 @@
 package com.geekyants.exception;
-
+/**
+ * @author @dibyapp, Name : Dibyaprakash, Email : dibyaprakash@geekyants.com
+ * @Project : timesheet-helper
+ */
 import java.util.Date;
 
 import org.springframework.http.HttpStatus;
