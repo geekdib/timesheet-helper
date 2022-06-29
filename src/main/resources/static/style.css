@@ -194,3 +194,8 @@ table.dataTable {
       background-color: #fcd3e1;
       color: #f66d9b;
     }
+    
+    
+    th{
+      font-size: 11px!important;
+    }
